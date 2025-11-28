@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.controller.SkillController">
+
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+            </padding>
+            <TableView fx:id="skillTable" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="colSkillCode" text="Código"/>
+                    <TableColumn fx:id="colSkillName" text="Nombre de la Habilidad"/>
+                </columns>
+            </TableView>
+            <HBox spacing="10">
+                <Button fx:id="buttonAñadir" text="Añadir" onAction="#handleAddSkill"/>
+                <Button fx:id="buttonActualizar" text="Actualizar" onAction="#handleUpdateSkill"/>
+                <Button fx:id="buttonEliminar" text="Eliminar" onAction="#handleDeleteSkill"/>
+                <Button fx:id="buttonLimpiar" text="Limpiar" onAction="#handleClear"/>
+                <Button fx:id="buttonVolver" text="Volver" onAction="#handleBack"/>
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>

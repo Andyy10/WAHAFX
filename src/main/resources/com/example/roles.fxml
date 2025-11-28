@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.controller.RoleController">
+
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+            </padding>
+            <TableView fx:id="roleTable" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="colRoleCode" text="Código"/>
+                    <TableColumn fx:id="colRoleName" text="Nombre del Rol"/>
+                </columns>
+            </TableView>
+            <HBox spacing="10">
+                <Button fx:id="buttonAñadir" text="Añadir" onAction="#handleAddRole"/>
+                <Button fx:id="buttonActualizar" text="Actualizar" onAction="#handleUpdateRole"/>
+                <Button fx:id="buttonEliminar" text="Eliminar" onAction="#handleDeleteRole"/>
+                <Button fx:id="buttonLimpiar" text="Limpiar" onAction="#handleClear"/>
+                <Button fx:id="buttonVolver" text="Volver" onAction="#handleBack"/>
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>

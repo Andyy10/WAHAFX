@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.controller.ProjectController">
+
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+            </padding>
+            <!-- Tabla de Proyectos -->
+            <TableView fx:id="projectTable" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="colProjectId" text="ID Proyecto"/>
+                    <TableColumn fx:id="colClientId" text="ID Cliente"/>
+                    <TableColumn fx:id="colProjectName" text="Nombre"/>
+                    <TableColumn fx:id="colStartDate" text="Fecha Inicio"/>
+                    <TableColumn fx:id="colEndDate" text="Fecha Fin"/>
+                    <TableColumn fx:id="colBudget" text="Presupuesto"/>
+                </columns>
+            </TableView>
+            <!-- Botones CRUD -->
+            <HBox spacing="10">
+                <Button fx:id="buttonAñadir" text="Añadir" onAction="#handleAddProject"/>
+                <Button fx:id="buttonActualizar" text="Actualizar" onAction="#handleUpdateProject"/>
+                <Button fx:id="buttonEliminar" text="Eliminar" onAction="#handleDeleteProject"/>
+                <Button fx:id="buttonLimpiar" text="Limpiar" onAction="#handleClear"/>
+                <Button fx:id="buttonVolver" text="Volver" onAction="#handleBack"/>
+            </HBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

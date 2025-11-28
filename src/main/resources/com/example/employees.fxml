@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.controller.EmployeeController">
+
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+            </padding>
+            <TableView fx:id="employeeTable" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID"/>
+                    <TableColumn fx:id="colRoleCode" text="Role"/>
+                    <TableColumn fx:id="colSupervisorId" text="Supervisor"/>
+                    <TableColumn fx:id="colFirstName" text="Nombre"/>
+                    <TableColumn fx:id="colLastName" text="Apellido"/>
+                    <TableColumn fx:id="colAge" text="Edad"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="10">
+                <Button fx:id="buttonAñadir" text="Añadir" onAction="#handleAddEmployee"/>
+                <Button fx:id="buttonActualizar" text="Actualizar" onAction="#handleUpdateEmployee"/>
+                <Button fx:id="buttonEliminar" text="Eliminar" onAction="#handleDeleteEmployee"/>
+                <Button fx:id="buttonLimpiar" text="Limpiar" onAction="#handleClear"/>
+                <Button fx:id="buttonVolver" text="Volver" onAction="#handleBack"/>
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>
