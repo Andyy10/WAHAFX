@@ -1,38 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.controller.ProjectController">
+<AnchorPane prefHeight="769.0" prefWidth="713.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ProjectController">
 
-    <center>
-        <VBox spacing="10">
+    <children>
+        <VBox alignment="TOP_CENTER" layoutX="24.0" layoutY="28.0" prefHeight="725.0" prefWidth="666.0">
+
             <padding>
-                <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </padding>
-            <!-- Tabla de Proyectos -->
-            <TableView fx:id="projectTable" prefHeight="300">
-                <columns>
-                    <TableColumn fx:id="colProjectId" text="ID Proyecto"/>
-                    <TableColumn fx:id="colClientId" text="ID Cliente"/>
-                    <TableColumn fx:id="colProjectName" text="Nombre"/>
-                    <TableColumn fx:id="colStartDate" text="Fecha Inicio"/>
-                    <TableColumn fx:id="colEndDate" text="Fecha Fin"/>
-                    <TableColumn fx:id="colBudget" text="Presupuesto"/>
-                </columns>
-            </TableView>
-            <!-- Botones CRUD -->
-            <HBox spacing="10">
-                <Button fx:id="buttonAñadir" text="Añadir" onAction="#handleAddProject"/>
-                <Button fx:id="buttonActualizar" text="Actualizar" onAction="#handleUpdateProject"/>
-                <Button fx:id="buttonEliminar" text="Eliminar" onAction="#handleDeleteProject"/>
-                <Button fx:id="buttonLimpiar" text="Limpiar" onAction="#handleClear"/>
-                <Button fx:id="buttonVolver" text="Volver" onAction="#handleBack"/>
-            </HBox>
+
+            <children>
+
+                <Label text="Gestión de Proyectos">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+
+                <TableView fx:id="projectTable" prefHeight="288.0" prefWidth="600.0">
+                    <columns>
+                        <TableColumn fx:id="colProjectId" prefWidth="80.0" text="ID Proyecto" />
+                        <TableColumn fx:id="colClientId" prefWidth="80.0" text="ID Cliente" />
+                        <TableColumn fx:id="colProjectName" prefWidth="160.0" text="Nombre" />
+                        <TableColumn fx:id="colStartDate" prefWidth="72.79998779296875" text="Fecha Inicio" />
+                        <TableColumn fx:id="colEndDate" prefWidth="67.20001220703125" text="Fecha Fin" />
+                        <TableColumn fx:id="colBudget" prefWidth="164.80002441406248" text="Presupuesto" />
+                    </columns>
+                </TableView>
+
+                <VBox alignment="TOP_CENTER" prefHeight="333.0" prefWidth="626.0" spacing="15.0" style="-fx-border-color: #cccccc; -fx-border-radius: 5; -fx-padding: 15;">
+
+                    <children>
+
+                        <Label alignment="TOP_CENTER" style="-fx-font-weight: bold; -fx-font-size: 14;" text="Detalles del Proyecto" textAlignment="CENTER" />
+
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="120.0" text="ID Proyecto:" />
+                                <TextField fx:id="tfProjectId" editable="false" prefWidth="200.0" />
+                            </children>
+                        </HBox>
+
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="120.0" text="ID Cliente:" />
+                                <TextField fx:id="tfClientId" prefWidth="200.0" />
+                            </children>
+                        </HBox>
+
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="120.0" text="Nombre:" />
+                                <TextField fx:id="tfProjectName" prefWidth="400.0" />
+                            </children>
+                        </HBox>
+
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="120.0" text="Fecha Inicio:" />
+                                <DatePicker fx:id="dpStartDate" prefWidth="200.0" />
+                            </children>
+                        </HBox>
+
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="120.0" text="Fecha Fin:" />
+                                <DatePicker fx:id="dpEndDate" prefWidth="200.0" />
+                            </children>
+                        </HBox>
+
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="120.0" text="Presupuesto:" />
+                                <TextField fx:id="tfBudget" prefWidth="200.0" />
+                            </children>
+                        </HBox>
+
+                    </children>
+
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </VBox>
+
+                <ButtonBar prefHeight="40.0" prefWidth="200.0">
+                    <buttons>
+                        <Button fx:id="buttonAñadir" onAction="#handleAddProject" text="Añadir" />
+                        <Button fx:id="buttonActualizar" onAction="#handleUpdateProject" text="Actualizar" />
+                        <Button fx:id="buttonEliminar" onAction="#handleDeleteProject" text="Eliminar" />
+                        <Button fx:id="buttonLimpiar" onAction="#handleClear" text="Limpiar" />
+                        <Button fx:id="buttonVolver" onAction="#handleBack" prefHeight="25.0" prefWidth="132.0" text="Dashboard" />
+                    </buttons>
+
+                    <VBox.margin>
+                        <Insets top="20.0" />
+                    </VBox.margin>
+                </ButtonBar>
+
+            </children>
 
         </VBox>
-    </center>
+    </children>
 
-</BorderPane>
+</AnchorPane>
