@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ManejadorAddress {
+
+    private DatabaseConnection connection;
     
     public List<Address> leerAddresses() {
         List<Address> addresses = new ArrayList<>();
