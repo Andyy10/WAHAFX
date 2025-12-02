@@ -3,6 +3,7 @@ module com.example {
     requires javafx.fxml;
     requires javafx.web;
     requires java.sql;
+    requires org.postgresql.jdbc;
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;

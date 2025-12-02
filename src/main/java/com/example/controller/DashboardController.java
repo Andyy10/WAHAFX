@@ -18,9 +18,7 @@ public class DashboardController {
     @FXML private Button buttonAddresses;
 
     @FXML
-    private void initialize() {
-        //no es necesario inicializarlo porque los botones ya están configurados en el fxml
-    }
+    private void initialize() {}
 
     @FXML
     private void handleEmployees() {
@@ -47,9 +45,9 @@ public class DashboardController {
         loadView("/com/example/addresses.fxml", "Gestión de Direcciones");
     }
 
-    private void loadView(String fxmlFile, String title) {
+    private void loadView(String fxmlPath, String title) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
 
             Stage stage = new Stage();
@@ -57,12 +55,15 @@ public class DashboardController {
             stage.setScene(new Scene(root));
             stage.show();
 
-            //cerrar dashboard
+            // cerrar dashboard
             Stage currentStage = (Stage) buttonEmployees.getScene().getWindow();
             currentStage.close();
+
         } catch (IOException e) {
-            System.out.println("aAAAAAAAAAAAAAAAAAAAAAAAAAAAA: " + e.getMessage());
+            System.out.println("Error al cargar: " + fxmlPath);
+            e.printStackTrace();
         }
     }
 }
+
 
